@@ -52,7 +52,7 @@ header.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.88);bac
 .navlinks{display:none}
 .navcta{display:flex;gap:8px;align-items:center;margin-left:auto}
 .navcta .ghost{display:none}
-.curbtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 13px;font:inherit;font-size:12.5px;font-weight:600;color:var(--muted);cursor:pointer;transition:.2s;white-space:nowrap}
+.curbtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:12px 15px;min-height:44px;display:inline-flex;align-items:center;font:inherit;font-size:12.5px;font-weight:600;color:var(--muted);cursor:pointer;transition:.2s;white-space:nowrap}
 .curbtn:hover{border-color:var(--ink);color:var(--ink)}
 
 /* ===== buttons ===== */
@@ -97,8 +97,8 @@ header.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.88);bac
 .fig{padding:22px 0;border-bottom:1px solid var(--line)}
 .fig:last-child{border-bottom:0}
 .fig b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(32px,9vw,54px);line-height:1;color:var(--ink)}
-.fig b .u{color:var(--red)}
-.fig span{display:block;margin-top:8px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:34ch}
+.fig b .u{color:var(--red);display:inline;font-size:1em;margin:0;line-height:1}
+.fig>span{display:block;margin-top:8px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:34ch}
 
 /* ===== cards ===== */
 .cards{display:grid;grid-template-columns:1fr;gap:16px}
@@ -141,7 +141,7 @@ header.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.88);bac
 /* ===== signal finder ===== */
 .finder{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:var(--gray)}
 .finder .chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
-.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 13px;font:inherit;font-size:13px;color:var(--muted);cursor:pointer;transition:.2s}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:12px 16px;font:inherit;font-size:13px;color:var(--muted);cursor:pointer;transition:.2s;min-height:44px;display:inline-flex;align-items:center}
 .chip:hover{border-color:var(--ink);color:var(--ink)}
 .chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
 .searchrow{display:flex;flex-direction:column;gap:10px}
@@ -239,18 +239,21 @@ footer a:hover{color:var(--ink)}
   .cards{grid-template-columns:1fr 1fr}
   .motion{grid-template-columns:1fr 1fr}
   .fgrid{grid-template-columns:1.4fr 1fr}
-  .navlinks{display:flex;gap:22px;font-size:14.5px;color:var(--muted)}
-  .navlinks a{position:relative;padding:4px 0}
+}
+
+/* ===== DESKTOP ===== */
+@media(min-width:1120px){
+  .navcta .ghost{display:inline-flex}
+}
+
+@media(min-width:960px){
+  .navlinks{display:flex;gap:16px;font-size:14px;color:var(--muted)}
+  .navlinks a{position:relative;padding:4px 0;white-space:nowrap}
   .navlinks a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--ink);transition:width .3s var(--ease)}
   .navlinks a:hover{color:var(--ink)}
   .navlinks a:hover::after{width:100%}
   .navin{min-height:64px;flex-wrap:nowrap}
   .navcta{margin-left:0}
-  .navcta .ghost{display:inline-flex}
-}
-
-/* ===== DESKTOP ===== */
-@media(min-width:960px){
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start}
   .stage{margin-top:0}
   .figs{grid-template-columns:repeat(4,1fr)}
