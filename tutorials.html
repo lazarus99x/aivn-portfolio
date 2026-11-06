@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" class="cur-usd">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tutorials — AI Vertical Network</title>
+<meta name="description" content="We find the people who already said they need what you sell, then build the AI that removes their problem. Done for you, or do it yourself.">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23080808'/%3E%3Cpath d='M9 22 16 9l7 13' stroke='%23FF3B30' stroke-width='2.4' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+/* ===== BASE — MOBILE FIRST ===== */
+:root{
+  --ink:#080808; --text:#1a1a1a; --muted:#5e5e5e; --faint:#8a8a8a;
+  --line:#e6e6e6; --gray:#f4f4f4; --red:#FF3B30; --red-dk:#c0262d;
+  --radius:16px; --wrap:1120px; --pad:18px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Inter Tight",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{max-width:100%;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--text);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,video,canvas,svg{max-width:100%}
+img,video,canvas{display:block}
+a{color:inherit;text-decoration:none}
+p{margin:0}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+h1,h2,h3{font-family:var(--display);font-weight:400;font-variation-settings:"opsz" 96;letter-spacing:-.02em;margin:0;color:var(--ink)}
+h1{font-size:clamp(34px,9vw,76px);line-height:1.02}
+h2{font-size:clamp(27px,6.4vw,50px);line-height:1.05}
+h3{font-size:clamp(19px,4.4vw,25px);line-height:1.15}
+em{font-style:italic}
+.red{color:var(--red)}
+.eyebrow{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:600;display:block}
+.lead{font-size:16.5px;color:var(--muted)}
+section{padding:clamp(48px,9vw,104px) 0}
+.hair{border-top:1px solid var(--line)}
+.shead{margin-bottom:26px}
+.shead p{margin-top:12px;max-width:52ch}
+#prog{position:fixed;top:0;left:0;height:2px;background:var(--red);width:0;z-index:99;transition:width .1s linear}
+
+/* ===== nav ===== */
+header.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.navin{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;font-weight:600;font-size:13.5px;letter-spacing:-.01em;color:var(--ink);line-height:1.15}
+.brand svg{flex:0 0 auto}
+.brand small{display:block;font-weight:500;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.navlinks{display:none}
+.navcta{display:flex;gap:8px;align-items:center;margin-left:auto}
+.navcta .ghost{display:none}
+.curbtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 13px;font:inherit;font-size:12.5px;font-weight:600;color:var(--muted);cursor:pointer;transition:.2s;white-space:nowrap}
+.curbtn:hover{border-color:var(--ink);color:var(--ink)}
+
+/* ===== buttons ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:14px 22px;font-family:var(--body);font-size:14.5px;font-weight:600;letter-spacing:-.01em;border:1px solid transparent;cursor:pointer;text-align:center;position:relative;overflow:hidden;transition:transform .22s var(--ease),box-shadow .22s var(--ease),background .22s,border-color .22s,color .22s}
+.btn.red{background:linear-gradient(180deg,#FF6157 0%,#FF3B30 42%,#E01F14 100%);color:#fff;box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 8px 22px -6px rgba(255,59,48,.55),0 2px 6px rgba(0,0,0,.08)}
+.btn.red:hover{transform:translateY(-2px);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 14px 30px -8px rgba(255,59,48,.62),0 3px 8px rgba(0,0,0,.1)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:#dcdcdc;box-shadow:0 1px 2px rgba(0,0,0,.04),0 6px 16px -10px rgba(0,0,0,.18)}
+.btn.ghost:hover{transform:translateY(-2px);border-color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.05),0 12px 24px -12px rgba(0,0,0,.28)}
+.btn.dark{background:var(--ink);color:#fff;box-shadow:0 8px 20px -8px rgba(0,0,0,.5)}
+.btn.dark:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn.sm{padding:9px 15px;font-size:13px;box-shadow:none}
+.btn.sm.red{box-shadow:0 6px 16px -8px rgba(255,59,48,.6)}
+.btn .arw{transition:transform .22s var(--ease)}
+.btn:hover .arw{transform:translateX(4px)}
+.btnblock{width:100%}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:999px}
+
+/* ===== hero ===== */
+.hero{padding-top:clamp(28px,6vw,58px);padding-bottom:0}
+.hero h1{margin:14px 0 0}
+.hero .lead{margin-top:16px;max-width:44ch}
+.cta-row{display:flex;flex-direction:column;gap:11px;margin-top:24px}
+.cta-row .btn{width:100%}
+.qual{max-width:66ch;margin-top:14px;color:var(--muted)}
+.altcta{font-size:13px;color:var(--faint);margin-top:13px;display:block}
+.altcta a{color:var(--muted);border-bottom:1px solid var(--line)}
+.altcta a:hover{color:var(--ink);border-color:var(--ink)}
+.stage{margin-top:26px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--ink);position:relative;aspect-ratio:16/11;box-shadow:0 24px 60px -30px rgba(0,0,0,.4)}
+.stage video{width:100%;height:100%;object-fit:cover;display:block}
+.stage::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background:radial-gradient(115% 85% at 12% 38%,rgba(8,8,8,.62) 0%,rgba(8,8,8,.28) 45%,rgba(8,8,8,.10) 70%,rgba(8,8,8,.55) 100%)}
+.stage .hud{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:14px 16px;background:linear-gradient(to top,rgba(8,8,8,.88),transparent);color:#fff;pointer-events:none}
+.stage .hud b{font-family:var(--display);font-weight:400;font-size:clamp(16px,4.4vw,26px);display:block;line-height:1.2}
+.stage .hud span{font-size:12px;opacity:.7}
+.stage .live{position:absolute;top:12px;left:12px;background:rgba(255,59,48,.95);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:5px 10px;display:flex;align-items:center;gap:6px;z-index:2}
+.stage .live i{width:6px;height:6px;border-radius:50%;background:#fff;animation:blip 1.6s infinite}
+@keyframes blip{0%{opacity:1}50%{opacity:.25}100%{opacity:1}}
+
+/* ===== figures ===== */
+.figband{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:clamp(34px,7vw,76px)}
+.figs{display:grid;grid-template-columns:1fr}
+.fig{padding:22px 0;border-bottom:1px solid var(--line)}
+.fig:last-child{border-bottom:0}
+.fig b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(32px,9vw,54px);line-height:1;color:var(--ink)}
+.fig b .u{color:var(--red)}
+.fig span{display:block;margin-top:8px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:34ch}
+
+/* ===== cards ===== */
+.cards{display:grid;grid-template-columns:1fr;gap:16px}
+.card{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff;transition:border-color .25s,transform .25s var(--ease),box-shadow .25s}
+.card:hover{border-color:var(--ink);transform:translateY(-3px);box-shadow:0 18px 40px -22px rgba(0,0,0,.35)}
+.card .n{font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--red);text-transform:uppercase}
+.card h3{margin:12px 0 9px}
+.card p{color:var(--muted);font-size:15px}
+.card ul{margin:14px 0 0;padding:0;list-style:none;font-size:14.5px;color:var(--muted)}
+.card ul li{padding:8px 0 8px 20px;position:relative;border-top:1px solid var(--line)}
+.card ul li:first-child{border-top:0}
+.card ul li::before{content:"";position:absolute;left:0;top:15px;width:7px;height:7px;border-radius:2px;background:var(--red)}
+
+/* ===== motion ===== */
+.motion{display:grid;grid-template-columns:1fr;gap:16px}
+.mcard{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;transition:border-color .25s,transform .25s var(--ease)}
+.mcard:hover{border-color:var(--ink);transform:translateY(-3px)}
+.mcard .art{position:relative;background:var(--ink);aspect-ratio:16/10;overflow:hidden}
+.mcard .art canvas{width:100%;height:100%;position:absolute;inset:0}
+.mcard .lbl{position:absolute;top:10px;left:10px;background:rgba(255,255,255,.94);border-radius:999px;padding:4px 10px;font-size:11px;font-weight:600;color:var(--ink);letter-spacing:.04em;z-index:2}
+.mcard .cap{padding:16px 18px}
+.mcard .cap b{display:block;font-family:var(--display);font-weight:400;font-size:19px;color:var(--ink)}
+.mcard .cap span{font-size:13.5px;color:var(--muted)}
+
+/* ===== comparison ===== */
+.cmp{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.crow{border-bottom:1px solid var(--line);padding:16px 18px}
+.crow:last-child{border-bottom:0}
+.crow>p{font-size:13.5px;color:var(--muted);margin-bottom:12px}
+.cmp .side{border-top:1px solid var(--line);padding-top:11px;margin-top:11px}
+.cmp .side:first-of-type{border-top:0;padding-top:0;margin-top:0}
+.cmp .k{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:600;display:block;margin-bottom:5px}
+.mark{display:flex;gap:9px;align-items:flex-start;font-size:14.5px;color:var(--muted)}
+.mark i{width:17px;height:17px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-style:normal;flex:0 0 auto;margin-top:2px}
+.mark.no i{background:var(--gray);color:var(--faint)}
+.mark.yes i{background:var(--red);color:#fff}
+.mark.yes{color:var(--ink);font-weight:500}
+.cmphead{display:none}
+
+/* ===== signal finder ===== */
+.finder{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:var(--gray)}
+.finder .chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 13px;font:inherit;font-size:13px;color:var(--muted);cursor:pointer;transition:.2s}
+.chip:hover{border-color:var(--ink);color:var(--ink)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.searchrow{display:flex;flex-direction:column;gap:10px}
+.searchrow input{width:100%;border:1px solid var(--line);background:#fff;border-radius:12px;padding:14px 15px;font:inherit;font-size:16px;color:var(--ink);min-width:0}
+.searchrow input:focus{outline:none;border-color:var(--ink)}
+.searchrow .btn{width:100%}
+.result{margin-top:16px;display:none}
+.result.show{display:block;animation:rise .4s var(--ease)}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.rrow{border:1px solid var(--line);background:#fff;border-radius:12px;padding:15px 16px;margin-top:10px}
+.rrow .meta{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--faint);margin-bottom:9px;flex-wrap:wrap}
+.pill{border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:11.5px;color:var(--muted);white-space:nowrap}
+.pill.hot{background:var(--red);border-color:var(--red);color:#fff;font-weight:600}
+.rrow q{display:block;font-size:15px;color:var(--ink);font-style:italic;margin-bottom:10px}
+.rrow .say{border-left:2px solid var(--red);padding-left:12px;font-size:14px;color:var(--muted)}
+.demo-note{font-size:12.5px;color:var(--faint);margin-top:14px;line-height:1.6}
+
+/* ===== offers ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 16px;font:inherit;font-size:14px;color:var(--muted);cursor:pointer;transition:.2s}
+.tab.on{background:var(--ink);border-color:var(--ink);color:#fff;font-weight:600}
+.panel{display:none}
+.panel.on{display:block;animation:rise .35s var(--ease)}
+.offer{border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:grid;grid-template-columns:1fr;gap:22px}
+.offer .price{font-family:var(--display);font-weight:400;font-size:clamp(30px,8vw,46px);line-height:1;color:var(--ink)}
+.offer .price small{display:block;font-family:var(--body);font-size:13px;color:var(--faint);margin-top:8px;letter-spacing:0;line-height:1.5}
+.offer ul{margin:0;padding:0;list-style:none;font-size:15px;color:var(--muted)}
+.offer ul li{padding:10px 0 10px 22px;position:relative;border-top:1px solid var(--line)}
+.offer ul li:first-child{border-top:0}
+.offer ul li::before{content:"";position:absolute;left:0;top:17px;width:7px;height:7px;border-radius:2px;background:var(--red)}
+.badge{display:inline-block;background:var(--gray);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:11.5px;color:var(--muted);font-weight:600;margin-bottom:12px}
+.sticky-cta{margin-top:18px;display:flex;flex-direction:column;gap:9px}
+
+/* currency: both always present, the detected one leads */
+.pair{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.p.usd,.p.ngn{transition:color .25s,font-size .25s}
+html.cur-usd .p.usd{color:var(--ink);font-size:1em;order:1}
+html.cur-usd .p.ngn{color:var(--faint);font-size:.58em;order:2}
+html.cur-ngn .p.ngn{color:var(--ink);font-size:1em;order:1}
+html.cur-ngn .p.usd{color:var(--faint);font-size:.58em;order:2}
+#priceFaq .p{font-size:1em!important;color:inherit!important}
+
+/* ===== founder ===== */
+.founder{display:grid;grid-template-columns:1fr;gap:24px;align-items:center}
+.founder figure{margin:0}
+.founder img{border-radius:var(--radius);border:1px solid var(--line);width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 14%;filter:grayscale(1) contrast(1.06);transition:filter .6s var(--ease)}
+.founder figcaption{margin-top:14px;display:flex;flex-direction:column;gap:3px}
+.founder figcaption b{font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:-.01em;line-height:1.2}
+.founder figcaption span{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.founder img:hover{filter:grayscale(.1) contrast(1.02)}
+.founder dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin:22px 0 0;font-size:14.5px}
+.founder dt{color:var(--faint);white-space:nowrap}
+.founder dd{margin:0;color:var(--ink);font-weight:500}
+
+/* ===== faq ===== */
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 0;display:flex;justify-content:space-between;gap:14px;align-items:center;font-size:16px;color:var(--ink);font-weight:500}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:0 0 auto;width:22px;height:22px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:14px;color:var(--muted);transition:.25s}
+.faq details[open] summary i{background:var(--red);border-color:var(--red);color:#fff;transform:rotate(45deg)}
+.faq p{margin:0 0 20px;color:var(--muted);font-size:15px}
+
+/* ===== closing + footer ===== */
+.closing{text-align:center}
+.closing h2{margin:14px auto 0;max-width:20ch}
+.closing .lead{margin:18px auto 0;max-width:46ch}
+.closing .cta-row{justify-content:center;align-items:center}
+footer{border-top:1px solid var(--line);padding:34px 0 48px;color:var(--faint);font-size:13.5px}
+.fgrid{display:grid;grid-template-columns:1fr;gap:26px}
+.fcol{display:flex;flex-direction:column;gap:8px}
+footer a:hover{color:var(--ink)}
+.credit{font-size:12px;color:var(--faint);margin-top:26px;line-height:1.7}
+
+.crow,.side,.offer,.card,.mcard,.finder,.tabs,.chips{min-width:0}
+.result,.rrow,.rrow q,.say,.lead,.credit{overflow-wrap:anywhere}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* ===== TABLET ===== */
+@media(min-width:600px){
+  :root{--pad:24px}
+  .cta-row{flex-direction:row;flex-wrap:wrap;justify-content:center}
+  .hero .cta-row{justify-content:flex-start}
+  .cta-row .btn{width:auto}
+  .searchrow{flex-direction:row;align-items:center}
+  .searchrow input{flex:1 1 240px}
+  .searchrow .btn{width:auto;flex:0 0 auto}
+  .sticky-cta{flex-direction:row}
+  .figs{grid-template-columns:1fr 1fr}
+  .fig{padding:24px 18px;border-bottom:0;border-right:1px solid var(--line)}
+  .fig:nth-child(2n){border-right:0}
+  .fig:nth-child(1),.fig:nth-child(2){border-bottom:1px solid var(--line)}
+  .cards{grid-template-columns:1fr 1fr}
+  .motion{grid-template-columns:1fr 1fr}
+  .fgrid{grid-template-columns:1.4fr 1fr}
+  .navlinks{display:flex;gap:22px;font-size:14.5px;color:var(--muted)}
+  .navlinks a{position:relative;padding:4px 0}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--ink);transition:width .3s var(--ease)}
+  .navlinks a:hover{color:var(--ink)}
+  .navlinks a:hover::after{width:100%}
+  .navin{min-height:64px;flex-wrap:nowrap}
+  .navcta{margin-left:0}
+  .navcta .ghost{display:inline-flex}
+}
+
+/* ===== DESKTOP ===== */
+@media(min-width:960px){
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start}
+  .stage{margin-top:0}
+  .figs{grid-template-columns:repeat(4,1fr)}
+  .fig{border-bottom:0!important}
+  .fig:nth-child(2n){border-right:1px solid var(--line)}
+  .fig:last-child{border-right:0}
+  .cards{grid-template-columns:repeat(3,1fr);gap:20px}
+  .motion{grid-template-columns:repeat(3,1fr);gap:20px}
+  .offer{grid-template-columns:1fr 300px;gap:32px;padding:clamp(22px,3vw,34px)}
+  .founder{grid-template-columns:.78fr 1.22fr;gap:clamp(28px,4vw,56px)}
+  .founder img{aspect-ratio:4/5;object-position:50% 28%}
+  .fgrid{grid-template-columns:1.6fr 1fr 1fr}
+  section{padding:clamp(60px,6vw,104px) 0}
+  .shead{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+  .shead>div{flex:1 1 420px}
+  .cmphead{display:grid;grid-template-columns:1.1fr 1fr 1fr;background:var(--gray)}
+  .cmphead span{padding:14px 18px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:600}
+  .cmphead span:nth-child(3){color:var(--ink);background:#fff;border-left:1px solid var(--line)}
+  .crow{display:grid;grid-template-columns:1.1fr 1fr 1fr;align-items:start;padding:0}
+  .crow>p{padding:16px 18px;margin:0;font-size:14px;color:var(--muted)}
+  .cmp .side{border-top:0;padding:16px 18px;margin:0;border-left:1px solid var(--line)}
+  .cmp .side:last-of-type{background:#fff}
+  .cmp .k{display:none}
+  .closing h2{max-width:22ch}
+}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+
+<header class="nav">
+  <div class="wrap navin">
+    <a class="brand" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#080808"/><path d="M9 22 16 9l7 13" stroke="#FF3B30" stroke-width="2.4" fill="none" stroke-linejoin="round"/></svg>
+      <span>AI VERTICAL NETWORK<small>Working worldwide</small></span>
+    </a>
+    <nav class="navlinks" aria-label="Sections">
+      <a href="index.html#why">Why us</a>
+      <a href="index.html#do">What we do</a>
+      <a href="index.html#signal">Find a signal</a>
+      <a href="index.html#offers">Offers</a>
+      <a href="index.html#founder">Founder</a>
+      <a href="tutorials.html" aria-current="page" class="here">Tutorials</a>
+    </nav>
+    <div class="navcta">
+      <a class="btn sm ghost" href="https://www.creata.tech" target="_blank" rel="noopener">Do it yourself</a>
+      <a class="btn sm red" href="index.html#offers">Done for you</a>
+    </div>
+  </div>
+</header>
+
+<style>
+.here{color:var(--ink)!important;font-weight:600}
+/* pillars */
+.pillars{display:grid;gap:14px;margin-top:26px;grid-template-columns:1fr}
+.pillar{border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;background:#fff}
+.pillar b{font-family:var(--display);font-weight:400;font-size:20px;display:block;letter-spacing:-.01em}
+.pillar span{display:block;font-size:14px;color:var(--muted);margin-top:6px;line-height:1.5}
+.pillar a{color:var(--red);font-weight:600;font-size:13.5px;text-decoration:none;display:inline-block;margin-top:10px}
+.pillar a:hover{text-decoration:underline}
+/* filters */
+.chipbar{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 26px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font:inherit;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;transition:.2s var(--ease)}
+.chip:hover{border-color:var(--ink);color:var(--ink)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+/* video grid */
+.vgrid{display:grid;gap:26px;grid-template-columns:1fr}
+.vcard{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;min-width:0;display:flex;flex-direction:column}
+.vthumb{position:relative;display:block;width:100%;padding:0;border:0;background:var(--ink);cursor:pointer;aspect-ratio:16/9;overflow:hidden}
+.vthumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease),opacity .3s}
+.vthumb:hover img{transform:scale(1.04);opacity:.86}
+.vplay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff}
+.vplay svg{background:rgba(8,8,8,.72);border-radius:999px;padding:11px;width:44px;height:44px;box-sizing:content-box;transition:.25s var(--ease)}
+.vthumb:hover .vplay svg{background:var(--red);transform:scale(1.06)}
+.vcard iframe{width:100%;aspect-ratio:16/9;border:0;display:block;background:#000}
+.vtag{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);padding:16px 20px 0}
+.vcard h3{font-family:var(--display);font-weight:400;font-size:19px;line-height:1.25;letter-spacing:-.01em;padding:8px 20px 0;margin:0;overflow-wrap:anywhere}
+.vchan{font-size:12.5px;font-weight:600;color:var(--faint);padding:6px 20px 0;margin:0}
+.vwhy{font-size:14px;color:var(--muted);line-height:1.55;padding:10px 20px 20px;margin:0;overflow-wrap:anywhere}
+.vcount{font-size:13px;color:var(--faint);margin-top:8px}
+@media(min-width:600px){.pillars{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:760px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.vgrid{grid-template-columns:repeat(3,1fr)}}
+</style>
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Tutorials</span>
+      <h1 style="margin-top:14px">Software, lessons<br>and <em>coaching.</em></h1>
+      <p class="lead" style="margin-top:18px;max-width:60ch">Everything we use to build this, in the open. The software runs the search. The lessons below teach the outreach and the builds. The coaching is where we work your niche with you, on camera, until it makes money.</p>
+      <div class="pillars">
+        <div class="pillar"><b>Software</b><span>Creata — intent search across five platforms. Find who already asked for what you sell, before you build anything.</span><a href="https://www.creata.tech" target="_blank" rel="noopener">Open Creata →</a></div>
+        <div class="pillar"><b>Lessons</b><span>Twelve tutorials below, hand-picked — warm outreach, agents that convert, your first online business, pricing and closing.</span><a href="#library">Go to the library →</a></div>
+        <div class="pillar"><b>Coaching</b><span>Pick your niche and we work it together, live and on camera, on real client builds. You keep everything you build.</span><a href="index.html#offers">See the Network →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="library" class="hair">
+    <div class="wrap">
+      <div class="shead rv"><div><span class="eyebrow">The library</span><h2>Twelve to start with. <em>Not a hundred.</em></h2></div></div>
+      <p class="lead qual rv" style="margin-top:14px">Every one of these was checked before it went up — still public, still embeddable, no dead links. The note under each says what to take from it, so you're not guessing which hour matters.</p>
+      <div class="chipbar" id="chipbar" role="group" aria-label="Filter tutorials">
+          <button class="chip on" type="button" data-cat="all" aria-pressed="true">All 12</button>
+          <button class="chip" type="button" data-cat="outreach" aria-pressed="false">Warm outreach</button>
+          <button class="chip" type="button" data-cat="agents" aria-pressed="false">AI agents</button>
+          <button class="chip" type="button" data-cat="start" aria-pressed="false">Start & sell</button>
+          <button class="chip" type="button" data-cat="money" aria-pressed="false">Money & closing</button>
+      </div>
+      <div class="vgrid" id="vgrid">
+        <article class="vcard rv" data-cat="outreach">
+          <button class="vthumb" type="button" data-id="RP4IgcE4YtI" aria-label="Play: Your First 10 Clients for AI Automation — The BEST Way (2026)">
+            <img src="https://i.ytimg.com/vi/RP4IgcE4YtI/maxresdefault.jpg" alt="Your First 10 Clients for AI Automation — The BEST Way (2026) — Oskar Knudsen" width="1280" height="720" loading="lazy" decoding="async">
+            <span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </button>
+          <span class="vtag">Warm outreach</span>
+          <h3>Your First 10 Clients for AI Automation — The BEST Way (2026)</h3>
+          <p class="vchan">Oskar Knudsen</p>
+          <p class="vwhy">The warm-first playbook. Find who already said they need it, then approach them — the same loop we run for clients.</p>
+        </article>
+        <article class="vcard rv" data-cat="outreach">
+          <button class="vthumb" type="button" data-id="NG4wr97cmNo" aria-label="Play: Outreach strategy to get high ticket Web Design clients without cold calling">
+            <img src="https://i.ytimg.com/vi/NG4wr97cmNo/maxresdefault.jpg" alt="Outreach strategy to get high ticket Web Design clients without cold calling — BONT" width="1280" height="720" loading="lazy" decoding="async">
+            <span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </button>
+          <span class="vtag">Warm outreach</span>
+          <h3>Outreach strategy to get high ticket Web Design clients without cold calling</h3>
+          <p class="vchan">BONT</p>
+          <p class="vwhy">High-ticket work without cold calling: referrals, warm intros and inbound. Use it if cold outreach makes you freeze.</p>
+        </article>
+        <article class="vcard rv" data-cat="outreach">
+          <button class="vthumb" type="button" data-id="B8zurdg1dmc" aria-label="Play: How to Write Cold Emails that Get Replies (LIVE examples)">
+            <img src="https://i.ytimg.com/vi/B8zurdg1dmc/maxresdefault.jpg" alt="How to Write Cold Emails that Get Replies (LIVE examples) — lemlist" width="1280" height="720" loading="lazy" decoding="async">
+            <span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </button>
+          <span class="vtag">Warm outreach</span>
+          <h3>How to Write Cold Emails that Get Replies (LIVE examples)</h3>
+          <p class="vchan">lemlist</p>
+          <p class="vwhy">Real emails rewritten live. Watch this before you send the ten openers we draft for you, so you know what good looks like.</p>
+        </article>
+        <article class="vcard rv" data-cat="agents">
+          <button class="vthumb" type="button" data-id="w0H1-b044KY" aria-label="Play: How to Build & Sell AI Agents: Ultimate Beginner's Guide">
+            <img src="https://i.ytimg.com/vi/w0H1-b044KY/maxresdefault.jpg" alt="How to Build & Sell AI Agents: Ultimate Beginner's Guide — Liam Ottley" width="1280" height="720" loading="lazy" decoding="async">
+            <span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </button>
+          <span class="vtag">AI agents</span>
+          <h3>How to Build & Sell AI Agents: Ultimate Beginner's Guide</h3>
+          <p class="vchan">Liam Ottley</p>
+          <p class="vwhy">The standard starting point for the whole model: build the agent, then sell it to a business that already needs it.</p>
+        </article>
+        <article class="vcard rv" data-cat="agents">
+          <button class="vthumb" type="button" data-id="ldETapkr8Hg" aria-label="Play: I Built a Marketing Team with 1 AI Agent and No Code (free n8n template)">
+            <img src="https://i.ytimg.com/vi/ldETapkr8Hg/maxresdefault.jpg" alt="I Built a Marketing Team with 1 AI Agent and No Code (free n8n template) — Nate Herk" width="1280" height="720" loading="lazy" decoding="async">
+            <span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </button>
+          <span class="vtag">AI agents</span>
+          <h3>I Built a Marketing Team with 1 AI Agent and No Code (free n8n template)</h3>
+          <p class="vchan">Nate Herk</p>
+          <p class="vwhy">A real build you can copy today, template included. The closest thing here to what we actually ship for a client.</p>
+        </article>
+        <article class="vcard rv" data-cat="agents">
+          <button class="vthumb" type="button" data-id="AV3kgGt7RZU" aria-label="Play: How to Build & Sell AI Agents to Businesses (Complete White Label Tutorial)">
+            <img src="https://i.ytimg.com/vi/AV3kgGt7RZU/maxresdefault.jpg" alt="How to Build & Sell AI Agents to Businesses (Complete White Label Tutorial) — Convocore" width="1280" height="720" loading="lazy" decoding="async">
+            <span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </button>
+          <span class="vtag">AI agents</span>
+          <h3>How to Build & Sell AI Agents to Businesses (Complete White Label Tutorial)</h3>
+          <p class="vchan">Convocore</p>
+          <p class="vwhy">White-label delivery — how to take the work on and fulfil it confidently before you can build every piece yourself.</p>
+        </article>
+        <article class="vcard rv" data-cat="start">
+          <button class="vthumb" type="button" data-id="kFeC-5VnvzU" aria-label="Play: How To Start An Online Business (Step by Step)">
+            <img src="https://i.ytimg.com/vi/kFeC-5VnvzU/maxresdefault.jpg" alt="How To Start An Online Business (Step by Step) — Fiverr" width="1280" height="720" loading="lazy" decoding="async">
+            <span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </button>
+          <span class="vtag">Start & sell</span>
+          <h3>How To Start An Online Business (Step by Step)</h3>
+          <p class="vchan">Fiverr</p>
+          <p class="vwhy">If you have never sold anything online, start here. Plain steps, no jargon, no audience required.</p>
+        </article>
+        <article class="vcard rv" data-cat="start">
+          <button class="vthumb" type="button" data-id="XG_-wR7AjLY" aria-label="Play: How I'd get freelance clients (starting from 0)">
+            <img src="https://i.ytimg.com/vi/XG_-wR7AjLY/maxresdefault.jpg" alt="How I'd get freelance clients (starting from 0) — Rachel How" width="1280" height="720" loading="lazy" decoding="async">
+            <span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </button>
+          <span class="vtag">Start & sell</span>
+          <h3>How I'd get freelance clients (starting from 0)</h3>
+          <p class="vchan">Rachel How</p>
+          <p class="vwhy">No audience, no portfolio, no track record — the position almost everyone actually starts from.</p>
+        </article>
+        <article class="vcard rv" data-cat="start">
+          <button class="vthumb" type="button" data-id="MuhBNocVnEw" aria-label="Play: How I Built an AI Agency from $0 to $100K in 12 Months (Full Roadmap)">
+            <img src="https://i.ytimg.com/vi/MuhBNocVnEw/maxresdefault.jpg" alt="How I Built an AI Agency from $0 to $100K in 12 Months (Full Roadmap) — Michele Torti" width="1280" height="720" loading="lazy" decoding="async">
+            <span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </button>
+          <span class="vtag">Start & sell</span>
+          <h3>How I Built an AI Agency from $0 to $100K in 12 Months (Full Roadmap)</h3>
+          <p class="vchan">Michele Torti</p>
+          <p class="vwhy">The whole arc including the boring middle. Watch it when the first month goes quiet and you want to quit.</p>
+        </article>
+        <article class="vcard rv" data-cat="money">
+          <button class="vthumb" type="button" data-id="9x89MPaiFZM" aria-label="Play: How to Actually Price AI Automation Services (Step By Step)">
+            <img src="https://i.ytimg.com/vi/9x89MPaiFZM/maxresdefault.jpg" alt="How to Actually Price AI Automation Services (Step By Step) — Michele Torti" width="1280" height="720" loading="lazy" decoding="async">
+            <span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </button>
+          <span class="vtag">Money & closing</span>
+          <h3>How to Actually Price AI Automation Services (Step By Step)</h3>
+          <p class="vchan">Michele Torti</p>
+          <p class="vwhy">Pricing is where beginners leave the most money on the table. Watch it before you quote anyone.</p>
+        </article>
+        <article class="vcard rv" data-cat="money">
+          <button class="vthumb" type="button" data-id="dEmiep-4bpU" aria-label="Play: How To Close Clients On A Call (Without Being Salesy)">
+            <img src="https://i.ytimg.com/vi/dEmiep-4bpU/maxresdefault.jpg" alt="How To Close Clients On A Call (Without Being Salesy) — Jason Moss" width="1280" height="720" loading="lazy" decoding="async">
+            <span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </button>
+          <span class="vtag">Money & closing</span>
+          <h3>How To Close Clients On A Call (Without Being Salesy)</h3>
+          <p class="vchan">Jason Moss</p>
+          <p class="vwhy">Pairs directly with the 30-minute call. Reach an agreement on the call, not in a follow-up email.</p>
+        </article>
+        <article class="vcard rv" data-cat="money">
+          <button class="vthumb" type="button" data-id="H_dWU8gzLA4" aria-label="Play: How To Start a B2B Lead Generation Agency (& Get Your First Client)">
+            <img src="https://i.ytimg.com/vi/H_dWU8gzLA4/maxresdefault.jpg" alt="How To Start a B2B Lead Generation Agency (& Get Your First Client) — Michael Gardiner" width="1280" height="720" loading="lazy" decoding="async">
+            <span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </button>
+          <span class="vtag">Money & closing</span>
+          <h3>How To Start a B2B Lead Generation Agency (& Get Your First Client)</h3>
+          <p class="vchan">Michael Gardiner</p>
+          <p class="vwhy">The business we actually run, explained end to end by someone who runs it.</p>
+        </article>
+      </div>
+      <p class="vcount" id="vcount">Showing all 12 tutorials.</p>
+    </div>
+  </section>
+
+  <section class="hair closing">
+    <div class="wrap">
+      <span class="eyebrow">Next step</span>
+      <h2>Watch them, build one, then <em class="red">talk to us.</em></h2>
+      <p class="lead">Learn it and ship it yourself with Creata, or have us run the acquisition for you. Either way you leave with something running, not a folder of bookmarks.</p>
+      <div class="cta-row">
+        <a class="btn red" href="https://cal.com/ai-vertical-network/30min" target="_blank" rel="noopener">Book a 30-minute call <span class="arw">→</span></a>
+        <a class="btn ghost" href="https://www.creata.tech" target="_blank" rel="noopener">Do it yourself with Creata <span class="arw">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="brand" style="margin-bottom:10px"><svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#080808"/><path d="M9 22 16 9l7 13" stroke="#FF3B30" stroke-width="2.4" fill="none" stroke-linejoin="round"/></svg><span>AI VERTICAL NETWORK<small>Working worldwide</small></span></div>
+        <p style="max-width:44ch">Lead and customer acquisition for B2B and local service businesses. One vertical, one result.</p>
+      </div>
+      <div class="fcol"><span class="eyebrow" style="margin-bottom:4px">Go to</span><a href="index.html#offers">Offers</a><a href="tutorials.html">Tutorials</a><a href="index.html#founder">Founder</a></div>
+      <div class="fcol"><span class="eyebrow" style="margin-bottom:4px">Contact</span><a href="mailto:support@aiverticalnetwork.com">support@aiverticalnetwork.com</a><a href="https://cal.com/ai-vertical-network/30min" target="_blank" rel="noopener">Book a 30-minute call</a><a href="https://www.creata.tech" target="_blank" rel="noopener">creata.tech</a><span>Remote-first · worldwide</span></div>
+    </div>
+    <p class="credit">© <span id="yr"></span> AI Vertical Network. Founded by Caleb Oghenemarho Umukoro (BNF).<br>Founder photography: original, shown in grayscale. Hero motion graphic: free clip from motionsites.ai, recoloured to brand. Section graphics: hand-coded.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById("yr").textContent=new Date().getFullYear();
+/* reveal on scroll */
+var rvs=[].slice.call(document.querySelectorAll(".rv"));
+if("IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  },{rootMargin:"0px 0px -8% 0px"});
+  rvs.forEach(function(el){ io.observe(el); });
+} else { rvs.forEach(function(el){ el.classList.add("in"); }); }
+
+/* click to play - no iframe until the visitor asks for it */
+document.getElementById("vgrid").addEventListener("click",function(ev){
+  var b=ev.target.closest(".vthumb"); if(!b) return;
+  var id=b.getAttribute("data-id");
+  var f=document.createElement("iframe");
+  f.setAttribute("src","https://www.youtube-nocookie.com/embed/"+id+"?autoplay=1&rel=0&modestbranding=1");
+  f.setAttribute("title",b.getAttribute("aria-label")||"Tutorial");
+  f.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+  f.setAttribute("allowfullscreen","");
+  f.setAttribute("loading","lazy");
+  b.parentNode.replaceChild(f,b);
+});
+
+/* filter */
+var bar=document.getElementById("chipbar");
+var cards=[].slice.call(document.querySelectorAll(".vcard"));
+var count=document.getElementById("vcount");
+bar.addEventListener("click",function(ev){
+  var c=ev.target.closest(".chip"); if(!c) return;
+  var cat=c.getAttribute("data-cat");
+  [].slice.call(bar.querySelectorAll(".chip")).forEach(function(x){
+    var on=x===c; x.classList.toggle("on",on); x.setAttribute("aria-pressed",on?"true":"false");
+  });
+  var n=0;
+  cards.forEach(function(card){
+    var show=(cat==="all"||card.getAttribute("data-cat")===cat);
+    card.style.display=show?"":"none"; if(show) n++;
+  });
+  count.textContent=n===12?"Showing all 12 tutorials.":("Showing "+n+" of 12 tutorials.");
+});
+</script>
+</body>
+</html>
