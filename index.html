@@ -314,7 +314,7 @@ footer a:hover{color:var(--ink)}
           <a class="btn red" href="#offers">Done-for-you — start now <span class="arw">→</span></a>
           <a class="btn ghost" href="https://www.creata.tech" target="_blank" rel="noopener">Do it yourself with Creata <span class="arw">→</span></a>
         </div>
-        <span class="altcta">Rather talk first? <a href="#offers">Book a call</a> · masked sample before you pay.</span>
+        <span class="altcta">Rather talk first? <a href="https://cal.com/ai-vertical-network/30min" target="_blank" rel="noopener">Book a 30-minute call</a> · masked sample before you pay.</span>
       </div>
 
       <div class="stage rv">
@@ -449,7 +449,7 @@ footer a:hover{color:var(--ink)}
         <p style="max-width:44ch">Lead and customer acquisition for B2B and local service businesses. One vertical, one result.</p>
       </div>
       <div class="fcol"><span class="eyebrow" style="margin-bottom:4px">Go to</span><a href="#why">Why us</a><a href="#do">What we do</a><a href="#signal">Find a signal</a><a href="#offers">Offers</a><a href="#founder">Founder</a></div>
-      <div class="fcol"><span class="eyebrow" style="margin-bottom:4px">Contact</span><a href="mailto:support@aiverticalnetwork.com">support@aiverticalnetwork.com</a><a href="https://www.creata.tech" target="_blank" rel="noopener">creata.tech</a><span>Remote-first · worldwide</span></div>
+      <div class="fcol"><span class="eyebrow" style="margin-bottom:4px">Contact</span><a href="mailto:support@aiverticalnetwork.com">support@aiverticalnetwork.com</a><a href="https://cal.com/ai-vertical-network/30min" target="_blank" rel="noopener">Book a 30-minute call</a><a href="https://www.creata.tech" target="_blank" rel="noopener">creata.tech</a><span>Remote-first · worldwide</span></div>
     </div>
     <p class="credit">© <span id="yr"></span> AI Vertical Network. Founded by Caleb Oghenemarho Umukoro (BNF).<br>Founder photography: original, shown in grayscale. Hero motion graphic: free clip from motionsites.ai, recoloured to brand. Section graphics: hand-coded.</p>
   </div>
@@ -458,8 +458,8 @@ footer a:hover{color:var(--ink)}
 <script>
 /* ===== 1. LINKS — SET THESE ===== */
 var LINKS = {
-  checkout : "#offers",                 // <-- PASTE YOUR CHECKOUT URL
-  meeting  : "#offers",                 // <-- PASTE YOUR MEETING URL
+  booking  : "https://cal.com/ai-vertical-network/30min",   // cal.com - 30 min
+  meeting  : "https://cal.com/ai-vertical-network/30min",
   creata   : "https://www.creata.tech",
   email    : "support@aiverticalnetwork.com"
 };
@@ -479,22 +479,22 @@ var OFFERS = [
     usd:"$95", ngn:"₦150,000", sub:"one time",
     body:"We run your ICP as a live query across five platforms and hand back the people who already said they needed it.",
     list:["40–60 intent-matched leads","The pain point behind each","10 drafted openers in your voice","Masked preview before you pay","Full set unlocks on payment"],
-    primary:{t:"Checkout — start the sprint", k:"checkout"}, second:{t:"or book a call first", k:"meeting"} },
+    primary:{t:"Start the sprint — book a call", k:"booking"}, second:{t:"Do it yourself with Creata", k:"creata"} },
   { id:"retainer", name:"Signal Retainer", badge:"Most popular · monthly",
     usd:"$300", ngn:"₦450,000", sub:"a month",
     body:"We keep the pipeline full and run the outreach from your account. Numbers report every Friday.",
     list:["Fresh signals every week","20 outreach messages sent a week","Drafted in your voice, your account","Friday report: sent, replies, calls","Cancel from month two"],
-    primary:{t:"Checkout — start the retainer", k:"checkout"}, second:{t:"or book a call first", k:"meeting"} },
+    primary:{t:"Start the retainer — book a call", k:"booking"}, second:{t:"Do it yourself with Creata", k:"creata"} },
   { id:"ppa", name:"Pay per appointment", badge:"No monthly commitment",
     usd:"$50", ngn:"₦75,000", sub:"per booked call",
     body:"For businesses that won't commit to a retainer. Same engine, invoiced on results you can verify.",
     list:["You pay per booked call","Weekly invoice","Verifiable bookings only","Same signals, same drafting","Switch to a retainer any time"],
-    primary:{t:"Checkout — pay per call", k:"checkout"}, second:{t:"or book a call first", k:"meeting"} },
+    primary:{t:"Pay per call — book a call", k:"booking"}, second:{t:"Do it yourself with Creata", k:"creata"} },
   { id:"network", name:"The Network", badge:"Learn it yourself",
     usd:"", ngn:"", sub:"priced on application",
     body:"Learn to build and sell your own AI vertical. Live, on camera, with real builds. Rather just run the engine? That's Creata.",
     list:["Live AI vertical engineering","Pick your niche, we work it together","Real client builds, not demos","You keep everything you build","Founder-led"],
-    primary:{t:"Book a call to apply", k:"meeting"}, second:{t:"Do it yourself with Creata", k:"creata"} }
+    primary:{t:"Book a call to apply", k:"booking"}, second:{t:"Do it yourself with Creata", k:"creata"} }
 ];
 
 var SAMPLES = {
@@ -678,7 +678,7 @@ panel("cv3",function(x,W,H,t){
 (function(){
   var tabs=document.getElementById("tabs"), panels=document.getElementById("panels"), h="", p="";
   function href(k){ return LINKS[k]||"#offers"; }
-  function trg(k){ return (k==="checkout"||k==="meeting") ? "" : ' target="_blank" rel="noopener"'; }
+  function trg(k){ return /^https?:/.test(LINKS[k]||"") ? ' target="_blank" rel="noopener"' : ""; }
   OFFERS.forEach(function(o,i){
     h+='<button class="tab'+(i===0?" on":"")+'" type="button" data-i="'+i+'" role="tab">'+o.name+'</button>';
     var priceBlock = (o.usd&&o.ngn)
