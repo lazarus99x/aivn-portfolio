@@ -186,7 +186,10 @@ html.cur-ngn .p.usd{color:var(--faint);font-size:.58em;order:2}
 /* ===== founder ===== */
 .founder{display:grid;grid-template-columns:1fr;gap:24px;align-items:center}
 .founder figure{margin:0}
-.founder img{border-radius:var(--radius);border:1px solid var(--line);width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 28%;filter:grayscale(1) contrast(1.06);transition:filter .6s var(--ease)}
+.founder img{border-radius:var(--radius);border:1px solid var(--line);width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 14%;filter:grayscale(1) contrast(1.06);transition:filter .6s var(--ease)}
+.founder figcaption{margin-top:14px;display:flex;flex-direction:column;gap:3px}
+.founder figcaption b{font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:-.01em;line-height:1.2}
+.founder figcaption span{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
 .founder img:hover{filter:grayscale(.1) contrast(1.02)}
 .founder dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin:22px 0 0;font-size:14.5px}
 .founder dt{color:var(--faint);white-space:nowrap}
@@ -257,6 +260,7 @@ footer a:hover{color:var(--ink)}
   .motion{grid-template-columns:repeat(3,1fr);gap:20px}
   .offer{grid-template-columns:1fr 300px;gap:32px;padding:clamp(22px,3vw,34px)}
   .founder{grid-template-columns:.78fr 1.22fr;gap:clamp(28px,4vw,56px)}
+  .founder img{aspect-ratio:4/5;object-position:50% 28%}
   .fgrid{grid-template-columns:1.6fr 1fr 1fr}
   section{padding:clamp(60px,6vw,104px) 0}
   .shead{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
@@ -394,11 +398,11 @@ footer a:hover{color:var(--ink)}
 
   <section id="founder" class="hair">
     <div class="wrap founder">
-      <figure class="rv"><img src="img/founder.jpg" alt="Lazarus BNF, founder of AI Vertical Network" width="896" height="1120" loading="lazy"></figure>
+      <figure class="rv"><img src="img/founder.jpg" alt="Caleb Oghenemarho Umukoro (BNF), founder of AI Vertical Network" width="896" height="1120" loading="lazy"><figcaption><b>Caleb Oghenemarho Umukoro</b><span>Founder · BNF</span></figcaption></figure>
       <div class="rv">
         <span class="eyebrow">The founder</span>
         <h2 style="margin-top:12px">I built the tool because the outreach was <em class="red">the hard part.</em></h2>
-        <p class="lead" style="margin-top:18px">I'm Lazarus BNF. I build AI for businesses, and I teach it. Every job starts the same way: find who's already complaining, take apart why, then build the smallest thing that fixes it.</p>
+        <p class="lead" style="margin-top:18px">I'm Caleb Oghenemarho Umukoro — BNF. I build AI for businesses, and I teach it. Every job starts the same way: find who's already complaining, take apart why, then build the smallest thing that fixes it.</p>
         <p class="lead" style="margin-top:14px">So I built the search engine for the first half. It reads what people actually typed across five platforms and hands back the pain behind it. Then I build the vertical that removes it. Same loop, every client.</p>
         <dl>
           <dt>Based</dt><dd>Remote-first · working worldwide</dd>
@@ -447,7 +451,7 @@ footer a:hover{color:var(--ink)}
       <div class="fcol"><span class="eyebrow" style="margin-bottom:4px">Go to</span><a href="#why">Why us</a><a href="#do">What we do</a><a href="#signal">Find a signal</a><a href="#offers">Offers</a><a href="#founder">Founder</a></div>
       <div class="fcol"><span class="eyebrow" style="margin-bottom:4px">Contact</span><a href="mailto:support@aiverticalnetwork.com">support@aiverticalnetwork.com</a><a href="https://www.creata.tech" target="_blank" rel="noopener">creata.tech</a><span>Remote-first · worldwide</span></div>
     </div>
-    <p class="credit">© <span id="yr"></span> AI Vertical Network. Founded by Lazarus “99x” BNF.<br>Founder photography: original, shown in grayscale. Hero and section graphics: hand-coded animation — no stock footage, no AI-generated media.</p>
+    <p class="credit">© <span id="yr"></span> AI Vertical Network. Founded by Caleb Oghenemarho Umukoro (BNF).<br>Founder photography: original, shown in grayscale. Hero motion graphic: free clip from motionsites.ai, recoloured to brand. Section graphics: hand-coded.</p>
   </div>
 </footer>
 
