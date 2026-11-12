@@ -378,17 +378,17 @@ footer a:hover{color:var(--ink)}
   <section id="signal" class="hair">
     <div class="wrap">
       <div class="shead rv">
-        <div><span class="eyebrow">Try it</span><h2>Type what your buyer would say.</h2></div>
-        <p class="lead">The same query we run for clients. Type it, or pick one.</p>
+        <div><span class="eyebrow">See the shape</span><h2>Type what your buyer would say.</h2></div>
+        <p class="lead">Four queries we run for real, shown here as stored samples — not a live search. Pick one to see the format, or bring your own phrase to the call and I run it live.</p>
       </div>
       <div class="finder rv">
         <div class="chips" id="chips"></div>
         <div class="searchrow">
           <input id="q" type="text" placeholder="e.g. tired of manual invoicing" aria-label="Describe your buyer's problem" autocomplete="off">
-          <button class="btn red" id="go" type="button">Find signals</button>
+          <button class="btn red" id="go" type="button">Show sample rows</button>
         </div>
         <div class="result" id="result"></div>
-        <p class="demo-note">Demo — sample rows showing the format of a result. Live results carry the real post, the real date and the real handle.</p>
+        <p class="demo-note">Stored sample rows, not live results — this box doesn't search anything. A real run returns the actual post, its date and the handle, and that is what a sprint delivers. <a href="https://cal.com/ai-vertical-network/30min" target="_blank" rel="noopener" style="color:var(--red);font-weight:600">Have me run your query live →</a></p>
       </div>
     </div>
   </section>
@@ -674,7 +674,7 @@ panel("cv3",function(x,W,H,t){
   function run(k){
     var rows=SAMPLES[k];
     if(!rows){
-      res.innerHTML='<div class="rrow"><div class="meta"><span class="pill">No sample for this query</span></div><q>Nothing stored for “'+k.replace(/[<>]/g,"")+'”.</q><div class="say">A live search would run this across TikTok, Instagram, X, LinkedIn and Facebook and return real posts with real dates. This demo carries four pre-loaded queries — the live engine is the product.</div></div>';
+      res.innerHTML='<div class="rrow"><div class="meta"><span class="pill">Not one of the four stored samples</span></div><q>Nothing stored for “'+k.replace(/[<>]/g,"")+'”.</q><div class="say">This box only carries four pre-loaded queries — it does not search anything. A live run sends your phrase across TikTok, Instagram, X, LinkedIn and Facebook and returns the real post, its date and the handle. <a href="'+LINKS.booking+'" target="_blank" rel="noopener" style="color:var(--red);font-weight:600">Book 30 minutes and I run it live →</a></div></div>';
       res.classList.add("show"); return;
     }
     var h='<div class="meta" style="font-size:12px;color:var(--faint);margin:16px 0 0"><span class="pill hot">'+rows.length+' signals</span><span>sample · format only</span></div>';
