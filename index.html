@@ -3,9 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AI Vertical Network — we find the businesses already asking</title>
-<meta name="description" content="We find the people who already said they need what you sell, then build the AI that removes their problem. Done for you, or do it yourself.">
+<title>AI Vertical Network — three real buying signals, free, no call</title>
+<meta name="description" content="Send your trade. I send back three real buying signals — masked, free, no call required — then build the AI that removes the problem, or teach you to do it yourself.">
 <meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://aiverticalnetwork.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI Vertical Network">
+<meta property="og:url" content="https://aiverticalnetwork.com/">
+<meta property="og:title" content="AI Vertical Network — three real buying signals, free, no call">
+<meta property="og:description" content="Send your trade. I send back three real buying signals — masked, free, no call required.">
+<meta property="og:image" content="https://aiverticalnetwork.com/media/hero-grid.jpg">
+<meta property="og:image:alt" content="AI Vertical Network — red grid motion graphic">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Vertical Network — three real buying signals, free, no call">
+<meta name="twitter:description" content="Send your trade. I send back three real buying signals — masked, free, no call required.">
+<meta name="twitter:image" content="https://aiverticalnetwork.com/media/hero-grid.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aiverticalnetwork.com/#org",
+      "name": "AI Vertical Network",
+      "url": "https://aiverticalnetwork.com/",
+      "email": "support@aiverticalnetwork.com",
+      "logo": "https://aiverticalnetwork.com/media/hero-grid.jpg",
+      "description": "Lead and customer acquisition for B2B and local service businesses. We find people already describing the problem, then build the AI that removes it.",
+      "founder": { "@id": "https://aiverticalnetwork.com/#founder" },
+      "sameAs": [
+        "https://www.linkedin.com/in/REPLACE_ME_LINKEDIN",
+        "https://x.com/REPLACE_ME_X"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://aiverticalnetwork.com/#founder",
+      "name": "Caleb Oghenemarho Umukoro",
+      "alternateName": "BNF",
+      "jobTitle": "Founder",
+      "worksFor": { "@id": "https://aiverticalnetwork.com/#org" },
+      "url": "https://aiverticalnetwork.com/",
+      "image": "https://aiverticalnetwork.com/img/founder.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/in/REPLACE_ME_LINKEDIN",
+        "https://x.com/REPLACE_ME_X",
+        "https://github.com/REPLACE_ME_GITHUB"
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Signal Sprint",
+      "provider": { "@id": "https://aiverticalnetwork.com/#org" },
+      "description": "A 14-day sprint: your ICP run as a live query across five platforms, 40-60 intent-matched leads, the pain behind each, and 10 drafted openers.",
+      "offers": {
+        "@type": "Offer",
+        "price": "95",
+        "priceCurrency": "USD",
+        "url": "https://aiverticalnetwork.com/#offers"
+      }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -160,20 +220,63 @@ header.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.88);bac
 .demo-note{font-size:12.5px;color:var(--faint);margin-top:14px;line-height:1.6}
 
 /* ===== offers ===== */
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 16px;font:inherit;font-size:14px;color:var(--muted);cursor:pointer;transition:.2s}
-.tab.on{background:var(--ink);border-color:var(--ink);color:#fff;font-weight:600}
-.panel{display:none}
-.panel.on{display:block;animation:rise .35s var(--ease)}
-.offer{border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:grid;grid-template-columns:1fr;gap:22px}
-.offer .price{font-family:var(--display);font-weight:400;font-size:clamp(30px,8vw,46px);line-height:1;color:var(--ink)}
-.offer .price small{display:block;font-family:var(--body);font-size:13px;color:var(--faint);margin-top:8px;letter-spacing:0;line-height:1.5}
-.offer ul{margin:0;padding:0;list-style:none;font-size:15px;color:var(--muted)}
-.offer ul li{padding:10px 0 10px 22px;position:relative;border-top:1px solid var(--line)}
-.offer ul li:first-child{border-top:0}
-.offer ul li::before{content:"";position:absolute;left:0;top:17px;width:7px;height:7px;border-radius:2px;background:var(--red)}
 .badge{display:inline-block;background:var(--gray);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:11.5px;color:var(--muted);font-weight:600;margin-bottom:12px}
-.sticky-cta{margin-top:18px;display:flex;flex-direction:column;gap:9px}
+.offers3{display:grid;grid-template-columns:1fr;gap:16px;align-items:start}
+.ocard{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff;display:flex;flex-direction:column;transition:border-color .25s,transform .25s var(--ease)}
+.ocard:hover{border-color:var(--ink);transform:translateY(-3px)}
+.ocard.rec{border-color:var(--red);box-shadow:0 20px 46px -28px rgba(255,59,48,.55)}
+.ocard.rec .badge{background:#fff2f1;border-color:#ffd0cc;color:#a1180f}
+.ocard h3{margin:0}
+.ocard .who{font-size:13.5px;color:var(--muted);margin-top:8px}
+.ocard .price{font-family:var(--display);font-weight:400;font-size:clamp(28px,7.4vw,40px);line-height:1;color:var(--ink);margin:18px 0 0}
+.ocard .price small{display:block;font-family:var(--body);font-size:13px;color:var(--faint);margin-top:8px;line-height:1.5}
+.ocard ul{margin:18px 0 0;padding:0;list-style:none;font-size:14.5px;color:var(--muted)}
+.ocard ul li{padding:9px 0 9px 22px;position:relative;border-top:1px solid var(--line)}
+.ocard ul li:first-child{border-top:0}
+.ocard ul li::before{content:"";position:absolute;left:0;top:16px;width:7px;height:7px;border-radius:2px;background:var(--red)}
+.ocard ul li b{color:var(--ink);font-weight:600}
+.ocard .end{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+.ocard .end b{color:var(--ink)}
+.ocard .cta{margin-top:18px;display:flex;flex-direction:column;gap:9px}
+
+/* ===== proof ===== */
+.proofgrid{display:grid;grid-template-columns:1fr;gap:16px;align-items:start}
+.pcard{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff}
+.pcard .tag{display:inline-block;background:var(--gray);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:11.5px;font-weight:600;color:var(--muted)}
+.pcard h3{margin:14px 0 0}
+.pcard>p{margin-top:12px;color:var(--muted);font-size:15px}
+.pstats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0 0}
+.pstat b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(22px,6vw,30px);line-height:1;color:var(--ink)}
+.pstat span{display:block;margin-top:7px;font-size:12.5px;color:var(--faint);line-height:1.45}
+.masked{border-left:2px solid var(--red);padding-left:13px;margin-top:22px}
+.masked q{display:block;font-size:15.5px;font-style:italic;color:var(--ink)}
+.masked .src{display:block;font-size:12px;color:var(--faint);margin-top:9px}
+.masked .opener{margin-top:13px;font-size:14px;color:var(--muted)}
+.masked .opener b{color:var(--ink)}
+.ph{background:#fff2f1;border:1px solid #ffd0cc;border-radius:6px;padding:1px 6px;font-weight:600;color:#a1180f;white-space:nowrap;font-style:normal}
+
+/* ===== form ===== */
+.formwrap{border:1px solid var(--line);border-radius:var(--radius);padding:clamp(20px,4.6vw,32px);background:var(--gray);max-width:620px;margin:26px auto 0;text-align:left}
+.formgrid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:20px}
+.field{position:relative}
+.field label{display:block;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:7px}
+.field input,.field textarea{width:100%;border:1px solid var(--line);background:#fff;border-radius:12px;padding:14px 15px;font:inherit;font-size:16px;color:var(--ink);font-family:var(--body)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--ink)}
+.field textarea{min-height:98px;resize:vertical}
+.hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.formgrid .btn{width:100%}
+.fmsg{margin-top:16px;font-size:14.5px;border-radius:12px;padding:13px 15px;display:none;line-height:1.55}
+.fmsg.show{display:block;animation:rise .35s var(--ease)}
+.fmsg.err{background:#fff2f1;border:1px solid #ffd0cc;color:#a1180f}
+.fmsg.ok{background:#eef6ef;border:1px solid #cbe0cd;color:#1c5a21}
+.fine{font-size:12.5px;color:var(--faint);margin-top:14px;line-height:1.65}
+
+/* ===== learn band (DIY demoted) ===== */
+.learnband{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:var(--gray)}
+.learnband h3{margin:0}
+.learnband p{margin-top:10px;color:var(--muted);font-size:15px}
+.learnband .row{display:flex;flex-direction:column;gap:11px;margin-top:18px}
+.learnband .row .btn{width:100%}
 
 /* currency: both always present, the detected one leads */
 .pair{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
@@ -182,7 +285,6 @@ html.cur-usd .p.usd{color:var(--ink);font-size:1em;order:1}
 html.cur-usd .p.ngn{color:var(--faint);font-size:.58em;order:2}
 html.cur-ngn .p.ngn{color:var(--ink);font-size:1em;order:1}
 html.cur-ngn .p.usd{color:var(--faint);font-size:.58em;order:2}
-#priceFaq .p{font-size:1em!important;color:inherit!important}
 
 /* ===== founder ===== */
 .founder{display:grid;grid-template-columns:1fr;gap:24px;align-items:center}
@@ -231,7 +333,9 @@ footer a:hover{color:var(--ink)}
   .searchrow{flex-direction:row;align-items:center}
   .searchrow input{flex:1 1 240px}
   .searchrow .btn{width:auto;flex:0 0 auto}
-  .sticky-cta{flex-direction:row}
+  .ocard .cta{flex-direction:row}
+  .learnband .row{flex-direction:row;flex-wrap:wrap;align-items:center}
+  .learnband .row .btn{width:auto}
   .figs{grid-template-columns:1fr 1fr}
   .fig{padding:24px 18px;border-bottom:0;border-right:1px solid var(--line)}
   .fig:nth-child(2n){border-right:0}
@@ -262,10 +366,12 @@ footer a:hover{color:var(--ink)}
   .fig:last-child{border-right:0}
   .cards{grid-template-columns:repeat(3,1fr);gap:20px}
   .motion{grid-template-columns:repeat(3,1fr);gap:20px}
-  .offer{grid-template-columns:1fr 300px;gap:32px;padding:clamp(22px,3vw,34px)}
+  .offers3{grid-template-columns:repeat(3,1fr);gap:20px}
+  .proofgrid{grid-template-columns:1.12fr .88fr;gap:20px}
+  .formwrap{padding:clamp(24px,3vw,34px)}
   .founder{grid-template-columns:1fr 1.05fr;gap:clamp(28px,4vw,56px)}
   .founder img{aspect-ratio:4/3}
-  .fgrid{grid-template-columns:1.6fr 1fr 1fr}
+  .fgrid{grid-template-columns:1.5fr 1fr 1fr 1fr;gap:22px}
   section{padding:clamp(60px,6vw,104px) 0}
   .shead{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
   .shead>div{flex:1 1 420px}
@@ -293,6 +399,7 @@ footer a:hover{color:var(--ink)}
     <nav class="navlinks" aria-label="Sections">
       <a href="#why">Why us</a>
       <a href="#do">What we do</a>
+      <a href="#proof">Proof</a>
       <a href="#signal">Find a signal</a>
       <a href="#offers">Offers</a>
       <a href="#founder">Founder</a>
@@ -300,8 +407,7 @@ footer a:hover{color:var(--ink)}
     </nav>
     <div class="navcta">
       <button class="curbtn" id="curBtn" type="button" aria-label="Switch currency">Show ₦</button>
-      <a class="btn sm ghost" href="https://www.creata.tech" target="_blank" rel="noopener">Do it yourself</a>
-      <a class="btn sm red" href="#offers">Done for you</a>
+      <a class="btn sm red" href="#get-signals">Get 3 free signals</a>
     </div>
   </div>
 </header>
@@ -316,10 +422,9 @@ footer a:hover{color:var(--ink)}
         <p class="lead">Someone posts “tired of manual invoicing” at 9:14am. We find it, tell you the pain behind it, then build the AI that removes it. One vertical at a time.</p>
 
         <div class="cta-row">
-          <a class="btn red" href="#offers">Done-for-you — start now <span class="arw">→</span></a>
-          <a class="btn ghost" href="https://www.creata.tech" target="_blank" rel="noopener">Do it yourself with Creata <span class="arw">→</span></a>
+          <a class="btn red" href="#get-signals">Send your trade — get 3 free signals <span class="arw">→</span></a>
         </div>
-        <span class="altcta">Rather talk first? <a href="https://cal.com/ai-vertical-network/30min" target="_blank" rel="noopener">Book a 30-minute call</a> · masked sample before you pay.</span>
+        <span class="altcta">No call, no charge. Prefer to talk first? <a href="https://cal.com/ai-vertical-network/30min" target="_blank" rel="noopener">Book a 30-minute call</a> · masked sample before you pay.</span>
       </div>
 
       <div class="stage rv">
@@ -328,6 +433,46 @@ footer a:hover{color:var(--ink)}
       </div>
     </div>
     <div class="wrap"><div class="figband"><div class="figs" id="figs"></div></div></div>
+  </section>
+
+  <!-- ===== PROOF — one real run of the tool =====
+       Every [[ ]] below is a real number from a real run. Nothing here is invented.
+       Card B (a client result) is deliberately empty — there is no paid client yet.
+       Running the sprint free for two or three businesses is how the number gets there. -->
+  <section id="proof" class="hair">
+    <div class="wrap">
+      <div class="shead rv">
+        <div><span class="eyebrow">Proof</span><h2>One real run, <em>numbers included.</em></h2></div>
+        <p class="lead">A logged run of my own tool. Not a client result — a receipt for the tool itself, with every number taken from the log.</p>
+      </div>
+      <div class="proofgrid">
+        <article class="pcard rv">
+          <span class="tag">Card A · A real run</span>
+          <h3>The query was <span class="ph">[["your query"]]</span></h3>
+          <p>Run on <span class="ph">[[date]]</span>, across TikTok, Instagram, X, LinkedIn and Facebook.</p>
+          <div class="pstats">
+            <div class="pstat"><b class="ph">[[N]]</b><span>posts scanned</span></div>
+            <div class="pstat"><b class="ph">[[N]]</b><span>matched the intent</span></div>
+            <div class="pstat"><b class="ph">[[N]]</b><span>worth contacting</span></div>
+            <div class="pstat"><b class="ph">[[N]]</b><span>hours from query to list</span></div>
+          </div>
+          <div class="masked">
+            <q>“<span class="ph">[[paste the real post]]</span>”</q>
+            <span class="src">Masked — <span class="ph">[[platform]]</span>, <span class="ph">[[date posted]]</span>, handle withheld</span>
+            <p class="opener"><b>The pain:</b> <span class="ph">[[the problem behind the sentence]]</span><br><b>The opener I'd send:</b> <span class="ph">[[the first line]]</span></p>
+          </div>
+        </article>
+        <article class="pcard rv">
+          <span class="tag">Card B · Client result</span>
+          <h3>Not here yet — <em>on purpose.</em></h3>
+          <p>I have no paid client result to show, so there is no number on this card. I won't invent one.</p>
+          <p>What I will do: run the sprint free for two or three businesses in exchange for real numbers and one line I can quote. That result, when it exists, goes on this card.</p>
+          <div class="cta-row" style="margin-top:18px">
+            <a class="btn ghost" href="#get-signals">Be one of the three <span class="arw">→</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
   </section>
 
   <section id="why" class="hair">
@@ -395,10 +540,71 @@ footer a:hover{color:var(--ink)}
 
   <section id="offers" class="hair">
     <div class="wrap">
-      <div class="shead rv"><div><span class="eyebrow">Offers</span><h2>Done for you, or <em>learn to do it.</em></h2></div></div>
-      <p class="lead qual rv">This is a fit check, not a pitch. Booking asks four questions — what you sell, how big the business is, whether you decide on spend, and your budget. It isn't a fit for everyone and I'll say so on the call: if the done-for-you route is wrong for you, I'll point you at the DIY one instead. Nothing is charged to book, and every booking is confirmed by me before it's locked in.</p>
-      <div class="tabs" id="tabs" role="tablist"></div>
-      <div id="panels"></div>
+      <div class="shead rv">
+        <div><span class="eyebrow">Offers</span><h2>Three ways in. <em>Same engine behind all of them.</em></h2></div>
+        <p class="lead">Every route starts with the free signals, so nobody pays blind. Prices show in your currency — switch with the button in the header.</p>
+      </div>
+      <div class="offers3">
+
+        <article class="ocard rec rv">
+          <span class="badge">Start here · 14 days</span>
+          <h3>Signal Sprint</h3>
+          <p class="who">For a business that wants the list, not a relationship.</p>
+          <div class="price"><span class="pair"><span class="p usd">$95</span><span class="p ngn">₦150,000</span></span><small>one time · 14 days</small></div>
+          <ul>
+            <li><b>40–60</b> intent-matched leads, pulled from five platforms</li>
+            <li>The pain point behind each one</li>
+            <li><b>10</b> drafted openers in your voice</li>
+            <li>Delivered as a CSV plus a short recorded walkthrough, within <b>14 days</b> of your query going in</li>
+            <li>A masked preview first — 3 real signals, handles blurred</li>
+          </ul>
+          <p class="end"><b>How it ends:</b> one payment, one delivery. Nothing renews. If you want it kept fresh, that's the retainer.</p>
+          <div class="cta">
+            <a class="btn red" href="#get-signals">Get 3 free signals first <span class="arw">→</span></a>
+            <a class="btn ghost" href="https://cal.com/ai-vertical-network/30min" target="_blank" rel="noopener">Start the sprint — book a call</a>
+          </div>
+        </article>
+
+        <article class="ocard rv">
+          <span class="badge">Most popular · monthly</span>
+          <h3>Signal Retainer</h3>
+          <p class="who">For a business that wants the pipeline run for them.</p>
+          <div class="price"><span class="pair"><span class="p usd">$300</span><span class="p ngn">₦450,000</span></span><small>a month</small></div>
+          <ul>
+            <li>Fresh signals every week</li>
+            <li><b>20</b> outreach messages a week, sent from your account</li>
+            <li>Drafted in your voice, not from a template</li>
+            <li>Friday report: sent, replies, calls booked</li>
+            <li>Weekly cadence, monthly billing</li>
+          </ul>
+          <p class="end"><b>How it ends:</b> month to month from month two. No notice period, no cancellation fee.</p>
+          <div class="cta">
+            <a class="btn red" href="#get-signals">Get 3 free signals first <span class="arw">→</span></a>
+            <a class="btn ghost" href="https://cal.com/ai-vertical-network/30min" target="_blank" rel="noopener">Start the retainer — book a call</a>
+          </div>
+        </article>
+
+        <article class="ocard rv">
+          <span class="badge">No monthly commitment</span>
+          <h3>Pay per appointment</h3>
+          <p class="who">For a business that won't sign a retainer.</p>
+          <div class="price"><span class="pair"><span class="p usd">$50</span><span class="p ngn">₦75,000</span></span><small>per booked call</small></div>
+          <ul>
+            <li>You pay per booked call, invoiced weekly</li>
+            <li><b>A booked call means the prospect accepts the calendar invite.</b> Nothing else counts and nothing else is billed — no-shows are not billed.</li>
+            <li>Verifiable: the invite lands in your calendar, not mine</li>
+            <li>Same signals and same drafting as the retainer</li>
+            <li>Switch to a retainer any time</li>
+          </ul>
+          <p class="end"><b>How it ends:</b> any week you don't want more calls, you stop. There is nothing to cancel.</p>
+          <div class="cta">
+            <a class="btn red" href="#get-signals">Get 3 free signals first <span class="arw">→</span></a>
+            <a class="btn ghost" href="https://cal.com/ai-vertical-network/30min" target="_blank" rel="noopener">Pay per call — book a call</a>
+          </div>
+        </article>
+
+      </div>
+      <p class="lead qual rv" style="margin-top:20px">Not sure which one? Send your trade with no plan in mind and the reply tells you which fits — including if the answer is none. Booking asks four questions (what you sell, how big the business is, whether you decide on spend, and your budget) and is a fit check, not a pitch. Nothing is charged to book, and every booking is confirmed by me before it's locked in.</p>
     </div>
   </section>
 
@@ -426,30 +632,60 @@ footer a:hover{color:var(--ink)}
       <div class="faq rv">
         <details open><summary>What is a “buying signal”? <i>+</i></summary><p>A real person, on a public platform, who posted something that says they're in the market. Not a scraped email. Not a job title. The words they typed and the date they typed them.</p></details>
         <details><summary>Is this just a lead list? <i>+</i></summary><p>No. A list gives you who. This gives you who, why now, and the line to open with.</p></details>
-        <details><summary>What does it cost? <i>+</i></summary><p id="priceFaq">From $95 for a 14-day sprint, $300 a month for the retainer, $50 per booked call. Switch currency with the button in the header.</p></details>
+        <details><summary>What does it cost? <i>+</i></summary><p>Three prices, each spelled out with exactly what's included: $95 for the 14-day sprint, $300 a month for the retainer, $50 per booked call. <a href="#offers" style="color:var(--red);font-weight:600">See the offers →</a></p></details>
+        <details><summary>What counts as a booked call? <i>+</i></summary><p>On the $50 plan a call is booked when the prospect accepts the calendar invite, and the invite lands in your calendar. Nothing else is billed — not a reply, not a maybe, not a no-show.</p></details>
         <details><summary>Do I pay before I see anything? <i>+</i></summary><p>No. You get a masked preview first — three real signals with names blurred — so you can judge quality before money moves.</p></details>
-        <details><summary>Can I learn this instead of hiring you? <i>+</i></summary><p>Yes. Live sessions and real builds in the network, or Creata on its own if you just want the engine.</p></details>
+        <details><summary>Have you done this for anyone else? <i>+</i></summary><p>Not yet, and there's a card on this page that says so. What I do have is a logged run of my own tool with the real numbers. <a href="#proof" style="color:var(--red);font-weight:600">See the run →</a></p></details>
+        <details><summary>Can I learn this instead of hiring you? <i>+</i></summary><p>Yes. Live sessions and real builds in the network, or Creata on its own if you just want the engine. There's a band at the bottom of this page for that route.</p></details>
       </div>
     </div>
   </section>
 
+  <!-- DIY / learn-it-yourself, demoted: one quiet band after the FAQ. -->
   <section class="hair">
     <div class="wrap">
-      <div class="shead rv"><div><span class="eyebrow">Tutorials</span><h2>Software, lessons and <em>coaching.</em></h2></div>
-        <a class="btn ghost" href="tutorials.html">Open the library <span class="arw">→</span></a></div>
-      <p class="lead qual rv">Twelve hand-picked tutorials — warm outreach, AI agents that convert, your first online business, pricing and closing. Every link checked before it went up. Watch them, build one, then talk to us.</p>
+      <div class="learnband rv">
+        <span class="eyebrow">Rather learn it yourself</span>
+        <h3>You don't have to hire me to do this.</h3>
+        <p>If you'd rather run the engine or build your own vertical than buy the result, that path is open — it just isn't the front door. Two ways in, and neither one is a pitch.</p>
+        <p style="font-size:13.5px;color:var(--faint)">The library holds twelve hand-picked tutorials — warm outreach, AI agents that convert, your first online business, pricing and closing. Every link checked before it went up.</p>
+        <div class="row">
+          <a class="btn ghost" href="https://www.creata.tech" target="_blank" rel="noopener">Run the engine yourself — creata.tech <span class="arw">→</span></a>
+          <a class="btn ghost" href="tutorials.html">Software, lessons and coaching <span class="arw">→</span></a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="hair closing">
+  <!-- ===== THE DOOR: the free-signals form. Every CTA on the page lands here. ===== -->
+  <section class="hair closing" id="get-signals">
     <div class="wrap">
       <span class="eyebrow">Next step</span>
       <h2>Send me your trade. I'll send back three <em class="red">real signals.</em></h2>
       <p class="lead">Masked, no charge, no call required. If the signals aren't there, I'll say so.</p>
-      <div class="cta-row">
-        <a class="btn red" href="#offers">Done-for-you — pick a plan <span class="arw">→</span></a>
-        <a class="btn ghost" href="https://www.creata.tech" target="_blank" rel="noopener">Do it yourself with Creata <span class="arw">→</span></a>
-      </div>
+
+      <form class="formwrap rv" id="signalForm" method="post" action="/api/request-signals" novalidate>
+        <div class="formgrid">
+          <div class="field">
+            <label for="trade">What you sell</label>
+            <textarea id="trade" name="trade" rows="4" maxlength="600" required placeholder="One clear sentence — the trade and who it's for. e.g. bookkeeping for UK tradespeople."></textarea>
+          </div>
+          <div class="field">
+            <label for="email">Where to send it</label>
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="200" required placeholder="you@yourbusiness.com">
+          </div>
+          <!-- honeypot: bots fill this, humans never see it -->
+          <div class="field hp" aria-hidden="true">
+            <label for="company_site">Company site</label>
+            <input id="company_site" name="company_site" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <button class="btn red" type="submit" id="signalBtn">Send my trade — get 3 signals <span class="arw">→</span></button>
+        </div>
+        <div class="fmsg" id="signalMsg" role="status" aria-live="polite"></div>
+        <p class="fine">Three masked signals back within <strong>2 working days</strong>. No newsletter, no list, nothing sold — one address, one reply, and you can tell me to stop at any point.</p>
+      </form>
+
+      <span class="altcta" style="display:block;text-align:center;margin-top:18px">Want to pick a plan instead? <a href="#offers">See the three offers</a> · <a href="https://cal.com/ai-vertical-network/30min" target="_blank" rel="noopener">or book a 30-minute call</a>.</span>
     </div>
   </section>
 
@@ -462,20 +698,27 @@ footer a:hover{color:var(--ink)}
         <div class="brand" style="margin-bottom:10px"><svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#080808"/><path d="M9 22 16 9l7 13" stroke="#FF3B30" stroke-width="2.4" fill="none" stroke-linejoin="round"/></svg><span>AI VERTICAL NETWORK<small>Working worldwide</small></span></div>
         <p style="max-width:44ch">Lead and customer acquisition for B2B and local service businesses. One vertical, one result.</p>
       </div>
-      <div class="fcol"><span class="eyebrow" style="margin-bottom:4px">Go to</span><a href="#why">Why us</a><a href="#do">What we do</a><a href="#signal">Find a signal</a><a href="#offers">Offers</a><a href="#founder">Founder</a><a href="tutorials.html">Tutorials</a></div>
+      <div class="fcol"><span class="eyebrow" style="margin-bottom:4px">Go to</span><a href="#why">Why us</a><a href="#do">What we do</a><a href="#proof">Proof</a><a href="#signal">Find a signal</a><a href="#offers">Offers</a><a href="#founder">Founder</a><a href="#get-signals">Get 3 signals</a><a href="tutorials.html">Tutorials</a></div>
       <div class="fcol"><span class="eyebrow" style="margin-bottom:4px">Contact</span><a href="mailto:support@aiverticalnetwork.com">support@aiverticalnetwork.com</a><a href="https://cal.com/ai-vertical-network/30min" target="_blank" rel="noopener">Book a 30-minute call</a><a href="https://www.creata.tech" target="_blank" rel="noopener">creata.tech</a><span>Remote-first · worldwide</span></div>
+      <div class="fcol"><span class="eyebrow" style="margin-bottom:4px">The founder</span><a href="https://www.linkedin.com/in/REPLACE_ME_LINKEDIN" target="_blank" rel="me noopener">LinkedIn — Caleb Oghenemarho Umukoro</a><a href="https://x.com/REPLACE_ME_X" target="_blank" rel="me noopener">X — @REPLACE_ME_X</a><a href="https://github.com/REPLACE_ME_GITHUB" target="_blank" rel="me noopener">GitHub</a><span>Caleb Oghenemarho Umukoro (BNF) · Founder</span></div>
     </div>
     <p class="credit">© <span id="yr"></span> AI Vertical Network. Founded by Caleb Oghenemarho Umukoro (BNF).<br>Founder photography: original, shown in grayscale. Hero motion graphic: free clip from motionsites.ai, recoloured to brand. Section graphics: hand-coded.</p>
   </div>
 </footer>
 
 <script>
-/* ===== 1. LINKS — SET THESE ===== */
+/* ===== 1. LINKS — SET THESE =====
+   The three REPLACE_ME values are the founder socials. The same URLs appear here,
+   in the footer, and in the JSON-LD block in <head> - all four places must match
+   or the search engines drop the identity entirely. */
 var LINKS = {
   booking  : "https://cal.com/ai-vertical-network/30min",   // cal.com - 30 min
   meeting  : "https://cal.com/ai-vertical-network/30min",
   creata   : "https://www.creata.tech",
-  email    : "support@aiverticalnetwork.com"
+  email    : "support@aiverticalnetwork.com",
+  linkedin : "https://www.linkedin.com/in/REPLACE_ME_LINKEDIN",
+  x        : "https://x.com/REPLACE_ME_X",
+  github   : "https://github.com/REPLACE_ME_GITHUB"
 };
 
 /* ===== 2. FIGURES — figure first, then what it means.
@@ -487,29 +730,9 @@ var PROOF = [
   { v:"0",   u:"",   l:"templates. every build starts from the business in front of us" }
 ];
 
-/* ===== 3. PRICES — both currencies, shown by location ===== */
-var OFFERS = [
-  { id:"sprint", name:"Signal Sprint", badge:"Start here · 14 days",
-    usd:"$95", ngn:"₦150,000", sub:"one time",
-    body:"We run your ICP as a live query across five platforms and hand back the people who already said they needed it.",
-    list:["40–60 intent-matched leads","The pain point behind each","10 drafted openers in your voice","Masked preview before you pay","Full set unlocks on payment"],
-    primary:{t:"Start the sprint — book a call", k:"booking"}, second:{t:"Do it yourself with Creata", k:"creata"} },
-  { id:"retainer", name:"Signal Retainer", badge:"Most popular · monthly",
-    usd:"$300", ngn:"₦450,000", sub:"a month",
-    body:"We keep the pipeline full and run the outreach from your account. Numbers report every Friday.",
-    list:["Fresh signals every week","20 outreach messages sent a week","Drafted in your voice, your account","Friday report: sent, replies, calls","Cancel from month two"],
-    primary:{t:"Start the retainer — book a call", k:"booking"}, second:{t:"Do it yourself with Creata", k:"creata"} },
-  { id:"ppa", name:"Pay per appointment", badge:"No monthly commitment",
-    usd:"$50", ngn:"₦75,000", sub:"per booked call",
-    body:"For businesses that won't commit to a retainer. Same engine, invoiced on results you can verify.",
-    list:["You pay per booked call","Weekly invoice","Verifiable bookings only","Same signals, same drafting","Switch to a retainer any time"],
-    primary:{t:"Pay per call — book a call", k:"booking"}, second:{t:"Do it yourself with Creata", k:"creata"} },
-  { id:"network", name:"The Network", badge:"Learn it yourself",
-    usd:"", ngn:"", sub:"priced on application",
-    body:"Learn to build and sell your own AI vertical. Live, on camera, with real builds. Rather just run the engine? That's Creata.",
-    list:["Live AI vertical engineering","Pick your niche, we work it together","Real client builds, not demos","You keep everything you build","Founder-led"],
-    primary:{t:"Book a call to apply", k:"booking"}, second:{t:"Do it yourself with Creata", k:"creata"} }
-];
+/* ===== 3. OFFERS — written as static markup in #offers =====
+   Prices live in the markup once per currency. The switch keys off the .p.usd /
+   .p.ngn classes, so nothing needs duplicating in JavaScript. */
 
 var SAMPLES = {
   "tired of manual invoicing":[
@@ -688,44 +911,57 @@ panel("cv3",function(x,W,H,t){
   q.value="tired of manual invoicing"; run("tired of manual invoicing");
 })();
 
-/* ===== offers ===== */
+/* ===== the free-signals form =====
+   Posts to /api/request-signals, which forwards to the n8n webhook. The webhook URL
+   never appears in this file or in page source. Honeypot, a hard timeout, and error
+   messages that name what went wrong - or hand over the support address, never a
+   dead end. */
 (function(){
-  var tabs=document.getElementById("tabs"), panels=document.getElementById("panels"), h="", p="";
-  function href(k){ return LINKS[k]||"#offers"; }
-  function trg(k){ return /^https?:/.test(LINKS[k]||"") ? ' target="_blank" rel="noopener"' : ""; }
-  OFFERS.forEach(function(o,i){
-    h+='<button class="tab'+(i===0?" on":"")+'" type="button" data-i="'+i+'" role="tab">'+o.name+'</button>';
-    var priceBlock = (o.usd&&o.ngn)
-      ? '<div class="price"><span class="pair"><span class="p usd">'+o.usd+'</span><span class="p ngn">'+o.ngn+'</span></span><small>'+o.sub+'</small></div>'
-      : '<div class="price">On application<small>'+o.sub+'</small></div>';
-    p+='<div class="panel'+(i===0?" on":"")+'" data-i="'+i+'"><div class="offer"><div>'
-      + '<span class="badge">'+o.badge+'</span><h3>'+o.name+'</h3>'
-      + '<p class="lead" style="margin:12px 0 16px;font-size:15.5px">'+o.body+'</p>'
-      + '<ul>'+o.list.map(function(l){return "<li>"+l+"</li>";}).join("")+'</ul></div><div>'
-      + priceBlock
-      + '<div class="sticky-cta">'
-      + '<a class="btn red btnblock" href="'+href(o.primary.k)+'"'+trg(o.primary.k)+'>'+o.primary.t+' <span class="arw">→</span></a>'
-      + '<a class="btn ghost btnblock" href="'+href(o.second.k)+'"'+trg(o.second.k)+'>'+o.second.t+'</a>'
-      + '</div></div></div></div>';
-    if(o.usd&&o.ngn){
-      document.getElementById("priceFaq") && document.getElementById("priceFaq").setAttribute("data-i",i); // keep simple
-    }
-  });
-  tabs.innerHTML=h; panels.innerHTML=p;
-  tabs.onclick=function(e){
-    var b=e.target.closest(".tab"); if(!b)return;
-    var i=b.dataset.i;
-    [].forEach.call(tabs.children,function(t){ t.classList.toggle("on",t.dataset.i===i); });
-    [].forEach.call(panels.children,function(x){ x.classList.toggle("on",x.dataset.i===i); });
-  };
-})();
+  var f=document.getElementById("signalForm"); if(!f) return;
+  var msg=document.getElementById("signalMsg"), btn=document.getElementById("signalBtn");
+  var trade=document.getElementById("trade"), email=document.getElementById("email"),
+      trap=document.getElementById("company_site");
+  var MAIL="support@aiverticalnetwork.com", TIMEOUT_MS=15000;
+  var BTN='Send my trade — get 3 signals <span class="arw">→</span>';
+  function say(html, kind){ msg.className="fmsg show "+kind; msg.innerHTML=html; }
+  function busy(on){ btn.disabled=on; btn.style.opacity=on?".62":""; btn.innerHTML= on ? "Sending…" : BTN; }
+  function mailto(){ return '<a href="mailto:'+MAIL+'" style="color:inherit;font-weight:600">'+MAIL+'</a>'; }
 
-/* price FAQ both currencies */
-(function(){
-  var el=document.getElementById("priceFaq"); if(!el)return;
-  el.innerHTML='From <span class="p usd">$95</span><span class="p ngn">₦150,000</span> for a 14-day sprint, '
-              + '<span class="p usd">$300</span><span class="p ngn">₦450,000</span> a month for the retainer, '
-              + '<span class="p usd">$50</span><span class="p ngn">₦75,000</span> per booked call.';
+  f.addEventListener("submit", function(e){
+    e.preventDefault();
+    var t=(trade.value||"").trim(), m=(email.value||"").trim();
+    if(t.length<6){ say("Tell me a bit more about what you sell — one clear sentence is enough.", "err"); trade.focus(); return; }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(m)){ say("That email doesn't look right. Check it and send again.", "err"); email.focus(); return; }
+    if(trap && trap.value){ return; }            // bot: fail silently, no hint given
+
+    var ctl = ("AbortController" in window) ? new AbortController() : null;
+    var timer = setTimeout(function(){ if(ctl) ctl.abort(); }, TIMEOUT_MS);
+    busy(true);
+
+    fetch("/api/request-signals", {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({ trade:t, email:m, company_site:(trap?trap.value:"") }),
+      signal: ctl ? ctl.signal : undefined
+    }).then(function(r){
+      return r.json().catch(function(){ return {}; }).then(function(d){ return {ok:r.ok, status:r.status, d:d}; });
+    }).then(function(res){
+      clearTimeout(timer); busy(false);
+      if(res.ok){
+        f.reset();
+        say("That's in. Three masked signals come back within <b>2 working days</b>, to <b>"+m.replace(/[<>]/g,"")+"</b>. If the signals aren't there for your trade, you'll get that answer instead of a padded list.", "ok");
+        return;
+      }
+      if(res.status===429){ say("That's a few too many in a short window. Try again in a minute, or email "+mailto()+".", "err"); return; }
+      if(res.status===400){ say((res.d && res.d.error) ? String(res.d.error).replace(/[<>]/g,"") : "Something in the form was rejected. Fix it and send again.", "err"); return; }
+      say("The form didn't go through. Nothing was lost — send the same two lines to "+mailto()+" and I'll pick it up from there.", "err");
+    }).catch(function(err){
+      clearTimeout(timer); busy(false);
+      var slow = (err && err.name==="AbortError");
+      say((slow ? "That took too long to send. " : "That didn't send — most likely a dropped connection. ")
+        + "Nothing was lost: send the same two lines to "+mailto()+" and I'll pick it up from there.", "err");
+    });
+  });
 })();
 
 document.getElementById("yr").textContent=new Date().getFullYear();
